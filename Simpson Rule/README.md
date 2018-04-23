@@ -17,9 +17,9 @@ If the values in the array are less than zero then min(diff) will display error.
 # Main Algorithm:
 After error checking I created a variable k. Inbuilt Length function is used to make an array of x.
 Odd number is checked by dividing k/2.
-## If the numbers are odd then trapezoid rule for integration is used for the last interval.
+If the numbers are odd then trapezoid rule for integration is used for the last interval.
 
-## If the numbers are odd then Simpson's 1/3 rd rule is used and trapezoid rule is used for last interval and values are added out of the loop.
-## If the values are even Simpson's 1/3rd rule is used. Every time the loop runs it adds the previous value until it reach to the desired value.
+ If the numbers are odd then Simpson's 1/3 rd rule is used and trapezoid rule is used for last interval and values are added out of the loop.
+ If the values are even Simpson's 1/3rd rule is used. Every time the loop runs it adds the previous value until it reach to the desired value.
 
-# P.S Simpson's 1/3rd rule and trapezoid rule combined is known as Simpson's composite rule.
+ P.S Simpson's 1/3rd rule and trapezoid rule combined is known as Simpson's composite rule.
