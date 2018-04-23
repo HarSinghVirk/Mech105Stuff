@@ -1,0 +1,1 @@
+### This code helps to find the value of x that satisfies the equation. The values for pressure and reaction equilibrium constant (K) can be changed. (Details are in pdf) 
