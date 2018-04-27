@@ -1,12 +1,20 @@
 function [t,y] = Heun(dydt,tspan,y0,h,es,maxit)
 % Harvinder Singh Virk, MECH-105, Last Edited - 26-APR-2018, Time: 11:30 PM.
 %********************************************
-% { }
+%{ Heun's method is based on the Euler's method. The Euler's method is not accurate.
+% This method works on two equations called predictor and corrector.
+% The predictor predicts the value and corrector tries to correct it by
+% estimating the value. The first value slope left is always calculated by
+% plugging values into the equation. The finding new y by plugging it into
+% the predictor equation and then finding the slope right using the same y value 
+% but increasing the value of t according to the stepsize. The the slope right and left are averaged and multiplied by 0.5.
+% y initial is add to that value. This is are corrector equation.
+%}
 % *******************************************
 % Inputs:
 % dydt - Differential Equation.
-% tspan - The range of valyes of t.
-% y0 - The inital value of y or intial condition to start. 
+% tspan - The range of values of t.
+% y0 - The initial value of y or initial condition to start. 
 % h = Step Size.
 % es - Estimated error.
 % maxit - Maximum number of iterations.
@@ -17,11 +25,13 @@ function [t,y] = Heun(dydt,tspan,y0,h,es,maxit)
 % *******************************************
 % Checking for errors using if statement.
 tic
-if nargin < 4
+if nargin < 4 
     error('Atleast four arguements') % This error will pop up if user will put less than 4 arguements/inputs.
 elseif nargin == 4 % If user didn't describe what is the estimated error and maximum iteration. These values are default for that case. 
     es = 0.001; % Error is 0.1% 
-    maxit = 50;
+    maxit = 50; % Maximum iterations.
+elseif nargin == 5 
+    maxit = 50; 
 elseif any(diff(tspan) <= 0) 
     error('tspan is not in asending order') % This error pops up if the given tspan is not in ascending order.
 end
