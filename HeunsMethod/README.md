@@ -5,14 +5,20 @@ The predictor predicts the value and corrector tries to correct it by estimating
 
 # Inputs: 6 
 dydt - Differential Equation.
+
 tspan - The range of values of t.
-y0 - The initial value of y or initial condition to start. 
+
+y0 - The initial value of y or initial condition to start.
+ 
 h = Step Size.
+
 es - Estimated error.
+
 maxit - Maximum number of iterations.
 
 # Outputs: 2
 t - t-variable.
+
 y - y-variable.
 
 # If statements: Error Checking:-
