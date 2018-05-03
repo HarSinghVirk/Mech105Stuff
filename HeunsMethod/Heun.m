@@ -31,13 +31,13 @@ end
 if h < 0
     h = abs(h); % Making the value of h greater than zero.
 end
-if tspan(1) > tspan(2) %Checking if user inputs the values wrong means if they enter [-2 -10] or [-10 -2] this will overcome that problem.
+if tspan(1) > tspan(2) % Checking if user inputs the values wrong means if they enter [-2 -10] or [-10 -2] this will overcome that problem.
     dumvar = tspan(1); % Saving as a dummy variable.
     tspan(1) = tspan(2); % Swapping the first value of tspan and second value of tspan.
-    tspan(2) = dumvar; % Storing secong value of tspan.
+    tspan(2) = dumvar; % Storing second value of tspan.
 end
 t = tspan(1):h:tspan(2); % Generating values of t using the step size provided by the user.
-% { This if statement is used to overcome the problem if the stepsize is not spaced properly for the last interval. Example: if tspan = [0 2.1] and h = 0.5. This will make the even step size such as [0 0.5 1 1.5 2]. But now we have 2.1 as the next term. It will simply add 2.1 at the end of the array. %}   
+% { This if statement is used to overcome the problem if the step-size is not spaced properly for the last interval. Example: if tspan = [0 2.1] and h = 0.5. This will make the even step size such as [0 0.5 1 1.5 2]. But now we have 2.1 as the next term. It will simply add 2.1 at the end of the array. %}   
 if (t(length(t)) ~= tspan(2))
     t = [t tspan(end)];
 end
